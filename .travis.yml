@@ -1,0 +1,5 @@
+language: csharp
+solution: AntiSpy.sln
+cache: bundler
+script:
+  - xbuild /p:Configuration=Debug AntiSpy.sln
