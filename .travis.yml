@@ -3,3 +3,10 @@ solution: AntiSpy.sln
 cache: bundler
 script:
   - xbuild /p:Configuration=Debug AntiSpy.sln
+deploy:
+  provider: releases
+  api_key: "12c4fbd9e9dcd8e9ac0f37a786024a2d9085fa91"
+  file: "/bin/debug/AntiSpy.dll"
+  skip_cleanup: true
+  on:
+    tags: true
