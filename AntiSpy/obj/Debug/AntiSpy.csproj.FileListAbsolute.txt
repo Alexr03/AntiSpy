@@ -1,0 +1,12 @@
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\AntiSpy.dll
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\AntiSpy.pdb
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\Assembly-CSharp-firstpass.dll
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\Assembly-CSharp.dll
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\Rocket.API.dll
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\Rocket.Core.dll
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\Rocket.Unturned.dll
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\UnityEngine.dll
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\obj\Debug\AntiSpy.csprojResolveAssemblyReference.cache
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\obj\Debug\AntiSpy.dll
+c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\obj\Debug\AntiSpy.pdb
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\Observatory.dll
