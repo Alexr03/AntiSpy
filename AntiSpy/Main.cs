@@ -116,9 +116,8 @@ namespace AntiSpy
                 {
                     UnturnedPlayer p = UnturnedPlayer.FromCSteamID(y);
                     R.Commands.Execute(UnturnedPlayer.FromCSteamID((CSteamID)((long)0)), "report " + p.CharacterName);
-                    deleteUsers.Enabled = true;
-                    
                 }
+                deleteUsers.Enabled = true;
 
             }
             CommandCheckAnti.ToProcessPic.Clear();
