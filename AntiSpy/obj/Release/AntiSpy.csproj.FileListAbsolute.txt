@@ -1,0 +1,12 @@
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Release\AntiSpy.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Release\AntiSpy.pdb
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Release\Assembly-CSharp-firstpass.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Release\Assembly-CSharp.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Release\Rocket.API.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Release\Rocket.Core.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Release\Rocket.Unturned.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Release\System.Drawing.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Release\UnityEngine.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\obj\Release\AntiSpy.csprojResolveAssemblyReference.cache
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\obj\Release\AntiSpy.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\obj\Release\AntiSpy.pdb
