@@ -59,6 +59,7 @@ namespace AntiSpy
             foreach(CSteamID user in CommandCheckAnti.ToUpload)
             {
                 UnturnedPlayer p = UnturnedPlayer.FromCSteamID(user);
+                R.Commands.Execute(UnturnedPlayer.FromCSteamID((CSteamID)((long)0)), "broadcast " + p.CharacterName + " testing anti-spy protector");
                 UnturnedChat.Say("User: " + p);
                 Provider.kick(user, "Using Antispy");
             }
@@ -110,11 +111,6 @@ namespace AntiSpy
                     else
                     {
                         Rocket.Core.Logging.Logger.Log("User: " + v.CharacterName + " Screenshot matches fake screenshots!");
-                        if (!CommandCheckAnti.BlacklistIDs.Contains(v.CSteamID))
-                        {
-                            CommandCheckAnti.BlacklistIDs.Add(v.CSteamID);
-                        }
-                        else { }
                         if (!CommandCheckAnti.ToUpload.Contains(v.CSteamID))
                         {
                             CommandCheckAnti.ToUpload.Add(v.CSteamID);
@@ -126,7 +122,7 @@ namespace AntiSpy
                     foreach (CSteamID y in CommandCheckAnti.ToUpload)
                     {
                         UnturnedPlayer p = UnturnedPlayer.FromCSteamID(y);
-                        R.Commands.Execute(UnturnedPlayer.FromCSteamID((CSteamID)((long)0)), "broadcast " + p.CharacterName + " testing anti-spy protector");
+                        R.Commands.Execute(UnturnedPlayer.FromCSteamID((CSteamID)((long)0)), "report " + p.CharacterName + " Anti-Spy");
                         CommandCheckAnti.ToUpload.Remove(y);
                         img.Dispose();
                     }

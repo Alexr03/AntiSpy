@@ -14,7 +14,6 @@ namespace AntiSpy
         public static string directory = new DirectoryInfo(Directory.GetCurrentDirectory()).Parent.FullName;
         public static string directory2 = Directory.GetParent(directory).ToString();
         public static string root = Directory.GetParent(directory2).ToString();
-        public static List<CSteamID> BlacklistIDs = new List<CSteamID>();
         public static List<UnturnedPlayer> ToProcessPic = new List<UnturnedPlayer>();
         public static List<CSteamID> ToUpload = new List<CSteamID>();
         public static CSteamID ID = (CSteamID)0;
