@@ -9,4 +9,4 @@ c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\Un
 c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\obj\Debug\AntiSpy.csprojResolveAssemblyReference.cache
 c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\obj\Debug\AntiSpy.dll
 c:\users\alex\documents\visual studio 2015\Projects\AntiSpy\AntiSpy\obj\Debug\AntiSpy.pdb
-C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\Observatory.dll
+C:\Users\Alex\Documents\Visual Studio 2015\Projects\AntiSpy\AntiSpy\bin\Debug\System.Drawing.dll

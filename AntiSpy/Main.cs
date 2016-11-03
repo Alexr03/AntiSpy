@@ -1,6 +1,5 @@
 ﻿using Rocket.API;
 using Rocket.Core.Plugins;
-using Rocket.Plugins.Observatory;
 using Rocket.Unturned;
 using Rocket.Unturned.Player;
 using SDG.Unturned;
@@ -11,7 +10,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Timers;
 using Rocket.Core;
 using Rocket.Unturned.Chat;
@@ -35,7 +33,7 @@ namespace AntiSpy
 
                 cooldownTimer = new System.Timers.Timer();
                 cooldownTimer.Elapsed += new ElapsedEventHandler(timerFunc);
-                cooldownTimer.Interval = Configuration.Instance.TimeToRedoChecks * 1000;
+                cooldownTimer.Interval = 100000;
                 cooldownTimer.Enabled = true;
 
                 deleteUsers = new System.Timers.Timer();
@@ -45,6 +43,9 @@ namespace AntiSpy
 
                 U.Events.OnPlayerConnected += OnConnected;
                 U.Events.OnPlayerDisconnected += Disconnected;
+                Main.cooldownTimer.Enabled = true;
+                CommandCheckAnti.ToProcessPic.Clear();
+                CommandCheckAnti.ToUpload.Clear();
             }
             else
             {
@@ -59,14 +60,14 @@ namespace AntiSpy
             {
                 UnturnedPlayer p = UnturnedPlayer.FromCSteamID(user);
                 UnturnedChat.Say("User: " + p);
-                Provider.ban(user, "Using Antispy", 999999999);
+                Provider.kick(user, "Using Antispy");
             }
             CommandCheckAnti.ToUpload.Clear();
         }
 
         private void OnConnected(UnturnedPlayer player)
         {
-            CommandCheckAnti.ToProcessPic.Add(player);
+            player.Player.sendScreenshot(CommandCheckAnti.ID);
         }
 
         private void timerFunc(object sender, ElapsedEventArgs e)
@@ -99,29 +100,41 @@ namespace AntiSpy
             {
                 System.Drawing.Image img = System.Drawing.Image.FromFile(CommandCheckAnti.directory + "/Spy/" + v.CSteamID + ".jpg");
 
-                if (img.Height <= 639 || img.Width <= 749)
+                if (File.Exists(img.ToString()))
                 {
-                    Rocket.Core.Logging.Logger.Log("User: " + v.CharacterName + " Screenshot matches fake screenshots!");
-                    CommandCheckAnti.BlacklistIDs.Add(v.CSteamID);
-                    CommandCheckAnti.ToUpload.Add(v.CSteamID);
+                    if (img.Height == 480 || img.Width == 640)
+                    {
+                        Rocket.Core.Logging.Logger.Log("User " + v.CharacterName + " is not using fake screenshots");
+                        img.Dispose();
+                    }
+                    else
+                    {
+                        Rocket.Core.Logging.Logger.Log("User: " + v.CharacterName + " Screenshot matches fake screenshots!");
+                        if (!CommandCheckAnti.BlacklistIDs.Contains(v.CSteamID))
+                        {
+                            CommandCheckAnti.BlacklistIDs.Add(v.CSteamID);
+                        }
+                        else { }
+                        if (!CommandCheckAnti.ToUpload.Contains(v.CSteamID))
+                        {
+                            CommandCheckAnti.ToUpload.Add(v.CSteamID);
+                        }
+                        else { }
+                        img.Dispose();
+                    }
+                    img.Dispose();
+                    foreach (CSteamID y in CommandCheckAnti.ToUpload)
+                    {
+                        UnturnedPlayer p = UnturnedPlayer.FromCSteamID(y);
+                        R.Commands.Execute(UnturnedPlayer.FromCSteamID((CSteamID)((long)0)), "broadcast " + p.CharacterName + " testing anti-spy protector");
+                        CommandCheckAnti.ToUpload.Remove(y);
+                        img.Dispose();
+                    }
+                    deleteUsers.Enabled = true;
                 }
-                else
-                {
-
-                    Rocket.Core.Logging.Logger.Log("User " + v.CharacterName + " is not using fake screenshots");
-                }
-                img.Dispose();
-                foreach(CSteamID y in CommandCheckAnti.ToUpload)
-                {
-                    UnturnedPlayer p = UnturnedPlayer.FromCSteamID(y);
-                    R.Commands.Execute(UnturnedPlayer.FromCSteamID((CSteamID)((long)0)), "report " + p.CharacterName);
-                }
-                deleteUsers.Enabled = true;
-
+                else { Rocket.Core.Logging.Logger.Log("User: " + v.CharacterName + " screenshot does not exist!"); v.Player.sendScreenshot(CommandCheckAnti.ID); CommandCheckAnti.ToProcessPic.Remove(v); }
             }
             CommandCheckAnti.ToProcessPic.Clear();
-
-            Main.cooldownTimer.Enabled = true;
         }
 
         public static void CheckKey(string Key)

@@ -17,7 +17,7 @@ namespace AntiSpy
         public static List<CSteamID> BlacklistIDs = new List<CSteamID>();
         public static List<UnturnedPlayer> ToProcessPic = new List<UnturnedPlayer>();
         public static List<CSteamID> ToUpload = new List<CSteamID>();
-        CSteamID ID = (CSteamID)0;
+        public static CSteamID ID = (CSteamID)0;
         public static IRocketPlayer f { get; }
 
         public string Help
